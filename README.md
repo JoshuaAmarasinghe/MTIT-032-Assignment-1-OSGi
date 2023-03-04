@@ -1,7 +1,7 @@
 # MTIT-032-Assignment-1-OSGi
  OSGi  framework and its underlying architecture, service intercommunication in OSGi Framework, registering services and lifecycle implementation of OSGi bundles.
 
-# Guidelines :
+# Guidelines:
 A. Assignment is an open-ended assignment. Creativity is up to you to decide. <br />
 B. This is similar to the practical example given in Apache Equinox Lab practical. You  
 have to develop your own publisher-subscriber scenario. <br />
