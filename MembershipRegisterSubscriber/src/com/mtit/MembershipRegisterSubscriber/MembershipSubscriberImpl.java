@@ -98,11 +98,11 @@ public class MembershipSubscriberImpl implements MembershipSubscriber {
 	}
 
    private void deleteRecord(MembershipPublisher membershippublisher) {
-		String doc_id;
+		String member_id;
 		
-		System.out.println("Enter Doctor's ID to be deleted: ");
-		doc_id = sc.nextLine();
-		membershippublisher.deleteMember(doc_id);
+		System.out.println("Enter Member's ID to be deleted: ");
+		member_id = sc.nextLine();
+		membershippublisher.deleteMember(member_id);
 		System.out.println();
 	}
 
