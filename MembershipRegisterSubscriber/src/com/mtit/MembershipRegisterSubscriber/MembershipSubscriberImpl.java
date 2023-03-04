@@ -7,7 +7,7 @@ import com.mtit.MembershipRegisterPublisher.Membership;
 import com.mtit.MembershipRegisterPublisher.MembershipPublisher;
 
 public class MembershipSubscriberImpl implements MembershipSubscriber {
-	
+
 	String input;
 	String member_ID;
 	String fname;
@@ -17,15 +17,17 @@ public class MembershipSubscriberImpl implements MembershipSubscriber {
 	String valid_years;
 	Scanner sc = new Scanner(System.in);
 
-	public static final String ADD ="add";
-	public static final String All ="all";
-	public static final String DELETE ="delete";
-	
+	public static final String ADD = "add";
+	public static final String All = "all";
+	public static final String DELETE = "delete";
+
 	@Override
 	public void getService(MembershipPublisher membershippublisher) {
-		System.out.println("=========== Welcome to the Membership Registration Portal ============");
 		System.out.println();
-		System.out.println("Select the service you want. ");
+		System.out.println("=========== Membership Registration ============");
+		System.out.println("                Gym Fitness 032                 ");
+		System.out.println();
+		System.out.println("Select the desired service from the below menu. ");
 		System.out.println();
 
 		while (true) {
@@ -45,11 +47,12 @@ public class MembershipSubscriberImpl implements MembershipSubscriber {
 	}
 
 	public String getInput() {
-		System.out.println("Add Members: 'Add'");
-		System.out.println("View Member Details: 'All'");
-		System.out.println("Remove Members: 'Delete'");
+		System.out.println("=========== Membership Registration ============");
+		System.out.println("Add Members:                               'Add'");
+		System.out.println("View Member Details:                       'All'");
+		System.out.println("Remove Members:                         'Delete'");
 		System.out.println();
-		System.out.println("Type the prefered Selection: ");
+		System.out.println("Type the prefered Selection:                    ");
 		String input = sc.nextLine();
 		return input;
 
@@ -82,24 +85,22 @@ public class MembershipSubscriberImpl implements MembershipSubscriber {
 	public void getAllRecords(MembershipPublisher membershippublisher) {
 		List<Membership> memberships = membershippublisher.getAllMembers();
 
-		System.out.println("Displaying all Registered Members ");
 		System.out.println();
-
+		System.out.println("Displaying all Registered Gym Members ");
+		System.out.println();
 		System.out.println("ID \t Full Name");
 		for (Membership membership : memberships) {
-
-			System.out.println(membership.getmember_ID());
-			System.out.println("\t" + membership.getFname() + " " + membership.getLname());
-
+			System.out.println();
+			System.out.println(membership.getmember_ID() + "\t" + membership.getFname() + " " + membership.getLname());
 			System.out.println();
 		}
 
 		System.out.println();
 	}
 
-   private void deleteRecord(MembershipPublisher membershippublisher) {
+	private void deleteRecord(MembershipPublisher membershippublisher) {
 		String member_id;
-		
+
 		System.out.println("Enter Member's ID to be deleted: ");
 		member_id = sc.nextLine();
 		membershippublisher.deleteMember(member_id);
