@@ -1,4 +1,4 @@
-package com.mtit.MembershipRegisterSubscriber;
+package com.mtit.WorkoutSubscriber;
 
 import java.util.Scanner;
 
@@ -6,24 +6,24 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 
-import com.mtit.MembershipRegisterPublisher.MembershipPublisher;
+import com.mtit.WorkoutPublisher.WorkoutPublisher;
 
-public class MembershipActivator implements BundleActivator {
+public class WorkoutActivator implements BundleActivator {
 
       ServiceReference serviceReference;
       Scanner sc = new Scanner(System.in);
 
 	public void start(BundleContext context) throws Exception {
-			System.out.println("Started Membership Subscriber");
-			serviceReference = context.getServiceReference(MembershipPublisher.class.getName());
+			System.out.println("Started Workout Subscriber");
+			serviceReference = context.getServiceReference(WorkoutPublisher.class.getName());
 			
-			MembershipPublisher membershipPublisher = (MembershipPublisher)context.getService(serviceReference);
-		     MembershipSubscriber membershipSubscriber = new MembershipSubscriberImpl();
-		     membershipSubscriber.getService(membershipPublisher);      
+			WorkoutPublisher workoutPublisher = (WorkoutPublisher)context.getService(serviceReference);
+		    WorkoutSubscriber workoutSubscriber = new WorkoutSubscriberImpl();
+		    workoutSubscriber.getService(workoutPublisher);      
 	}
 
 	public void stop(BundleContext context) throws Exception {
-		System.out.println("Stoped Membership Subscriber");
+		System.out.println("Stoped Workout Subscriber");
 	
 	}
 

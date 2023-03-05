@@ -1,21 +1,21 @@
-package com.mtit.MembershipRegisterPublisher;
+package com.mtit.WorkoutPublisher;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
 
-public class MembershipActivator implements BundleActivator {
+public class WorkoutActivator implements BundleActivator {
 
-	ServiceRegistration memberServiceRegistration;
+	ServiceRegistration workoutServiceRegistration;
 	
 	public void start(BundleContext context) throws Exception {
-		    System.out.println("Membership Publisher Started");
-            MembershipPublisher membershipPublisher = new MembershipPublishImpl();
-            memberServiceRegistration = context.registerService(MembershipPublisher.class.getName(), membershipPublisher, null);		
+		    System.out.println("Workout Publisher Started");
+            WorkoutPublisher WorkoutPublisher = new WorkoutPublishImpl();
+            workoutServiceRegistration = context.registerService(WorkoutPublisher.class.getName(), WorkoutPublisher, null);		
 	}
 
 	public void stop(BundleContext Context) throws Exception {
-		   System.out.println("Membership Publisher Stopped");
+		   System.out.println("Workout Publisher Stopped");
 		
 	}
 

@@ -1,7 +1,7 @@
-package com.mtit.MembershipRegisterSubscriber;
+package com.mtit.WorkoutSubscriber;
 
-import com.mtit.MembershipRegisterPublisher.MembershipPublisher;
+import com.mtit.WorkoutPublisher.WorkoutPublisher;
 
-public interface MembershipSubscriber {
-         public void getService(MembershipPublisher membershippublisher);
+public interface WorkoutSubscriber {
+         public void getService(WorkoutPublisher workoutpublisher);
 }

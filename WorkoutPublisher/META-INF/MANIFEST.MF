@@ -1,11 +1,11 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: MembershipRegisterPublisher
-Bundle-SymbolicName: MembershipRegisterPublisher
+Bundle-Name: WorkoutPublisher
+Bundle-SymbolicName: WorkoutPublisher
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: com.mtit.MembershipRegisterPublisher.MembershipActivator
-Export-Package: com.mtit.MembershipRegisterPublisher
+Bundle-Activator: com.mtit.WorkoutPublisher.WorkoutActivator
+Export-Package: com.mtit.WorkoutPublisher
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Automatic-Module-Name: MembershipRegisterPublisher
+Automatic-Module-Name: WorkoutPublisher
 Import-Package: org.osgi.framework;version="1.3.0"
 Bundle-ActivationPolicy: lazy

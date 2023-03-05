@@ -1,20 +1,20 @@
-package com.mtit.MembershipRegisterSubscriber;
+package com.mtit.WorkoutSubscriber;
 
 import java.util.List;
 import java.util.Scanner;
 
-import com.mtit.MembershipRegisterPublisher.Membership;
-import com.mtit.MembershipRegisterPublisher.MembershipPublisher;
+import com.mtit.WorkoutPublisher.Workout;
+import com.mtit.WorkoutPublisher.WorkoutPublisher;
 
-public class MembershipSubscriberImpl implements MembershipSubscriber {
+public class WorkoutSubscriberImpl implements WorkoutSubscriber {
 	
 	String input;
-	String member_ID;
-	String fname;
-	String lname;
-	String contact_no;
-	String mem_type;
-	String valid_years;
+	String workout_ID;
+	String workout_name;
+	String workout_weight;
+	String workout_reps;
+	String workout_type;
+	String workout_duration;
 	Scanner sc = new Scanner(System.in);
 
 	public static final String ADD ="add";
@@ -22,23 +22,24 @@ public class MembershipSubscriberImpl implements MembershipSubscriber {
 	public static final String DELETE ="delete";
 	
 	@Override
-	public void getService(MembershipPublisher membershippublisher) {
-	      System.out.println("=========== Welcome to the Admin Portal ============");
+	public void getService(WorkoutPublisher workoutpublisher) {
+	      System.out.println("=========== Workout Schedule ============");
+	      System.out.println("            Gym Fitness 032              ");
 	      System.out.println();
-	      System.out.println("Select the service you want. ");
+	      System.out.println("Please select the service you would like to make a referral. ");
 	      System.out.println();
 	      
 	      while(true) {
 	    	  input = getInput();
 	    	  
 	    	  if(input.equalsIgnoreCase(ADD)) {
-	    		  addRecord(membershippublisher);
+	    		  addRecord(workoutpublisher);
 	    	  }
 	    	  else if (input.equalsIgnoreCase(All)) {
-	    		  getAllRecords(membershippublisher);
+	    		  getAllRecords(workoutpublisher);
 	    	  }
 	    	  else if (input.equalsIgnoreCase(DELETE)) {
-	    		  deleteRecord(membershippublisher);
+	    		  deleteRecord(workoutpublisher);
 	    	  }
 	    	  else {
 	    		  System.out.println("Invalid");
@@ -48,50 +49,58 @@ public class MembershipSubscriberImpl implements MembershipSubscriber {
 	}
 
 public String getInput() {
-	   System.out.println("To Insert a record to the portal type: 'Add'");
-	   System.out.println("To View records from the portal type: 'All'");
-	   System.out.println("To Delete a record from the portal type: 'Delete'");
+	   System.out.println("Add Workout Schedule:               'Add'");
+	   System.out.println("View All Workout Schedule:          'All'");
+	   System.out.println("Delete Workout Schedule:            'Delete'");
 	   System.out.println();
 	   String input =sc.nextLine();
 	   return input;
 	   
    }
    
-   public void addRecord(MembershipPublisher membershippublisher) {
-	   System.out.println("Enter Member ID:");
-	   member_ID = sc.nextLine();
+   public void addRecord(WorkoutPublisher workoutpublisher) {
 	   
-	   System.out.println("Enter Member's First Name:");
-	   fname = sc.nextLine();
+	   System.out.println("=========== Workout Schedule ============");
+	   System.out.println("            Gym Fitness 032              ");
+	   System.out.println();
 	   
-	   System.out.println("Enter Member's Last Name");
-	   lname = sc.nextLine();
+	   System.out.println("Enter workout ID:");
+	   workout_ID = sc.nextLine();
 	   
-	   System.out.println("Enter Contact Number:");
-	   contact_no = sc.nextLine();
+	   System.out.println("Enter workout's Name:");
+	   workout_name = sc.nextLine();
 	   
-	   System.out.println("Enter Membership Type:");
-	   mem_type = sc.nextLine();
+	   System.out.println("Enter workout weight:");
+	   workout_weight = sc.nextLine();
 	   
-	   System.out.println("Enter Membership Valid for (Year): ");
-	   valid_years = sc.nextLine();
+	   System.out.println("Enter workout Sets & reps:");
+	   workout_reps = sc.nextLine();
 	   
-	   String temp = membershippublisher.addMember(member_ID, fname, lname, contact_no, mem_type, valid_years);
+	   System.out.println("Enter workout Type:");
+	   workout_type = sc.nextLine();
+	   
+	   System.out.println("Enter workout duration: ");
+	   workout_duration = sc.nextLine();
+	   
+	   String temp = workoutpublisher.addWorkout(workout_ID, workout_name, workout_weight, workout_reps, workout_type, workout_duration);
 	   System.out.println(temp);
 	   System.out.println();
    }
    
-   public void getAllRecords(MembershipPublisher membershippublisher) {
-	   List<Membership> memberships = membershippublisher.getAllMembers();
+   public void getAllRecords(WorkoutPublisher workoutpublisher) {
+	   List<Workout> workouts = workoutpublisher.getAllWorkouts();
 	   
-	   System.out.println("Displaying all Registered Members ");
+	   System.out.println("=========== Workout Schedule ============");
+	   System.out.println("            Gym Fitness 032              ");
+	   System.out.println();
+	   System.out.println("Displaying all Registered Workouts ");
 	   System.out.println();
 	   
-	   System.out.println("ID \t Full Name");
-	   for(Membership membership : memberships ) {
+	   System.out.println("ID \t Workout List");
+	   for(Workout workout : workouts ) {
+		   System.out.println();
+		   System.out.println(workout.getworkout_ID()+"\t"+" "+ workout.getworkout_name());
 		   
-		   System.out.println(membership.getmember_ID());
-		   System.out.println("\t" +  membership.getFname() + " " + membership.getLname());
 		   
 		   System.out.println();
 	   }
@@ -100,12 +109,12 @@ public String getInput() {
    }
    
 
-   private void deleteRecord(MembershipPublisher membershippublisher) {
-		String doc_id;
+   private void deleteRecord(WorkoutPublisher workoutpublisher) {
+		String workout_id;
 		
-		System.out.println("Enter Doctor's ID to be deleted: ");
-		doc_id = sc.nextLine();
-		membershippublisher.deleteMember(doc_id);
+		System.out.println("Enter Workout ID to be deleted: ");
+		workout_id = sc.nextLine();
+		workoutpublisher.deleteWorkout(workout_id);
 		System.out.println();
 	}
    

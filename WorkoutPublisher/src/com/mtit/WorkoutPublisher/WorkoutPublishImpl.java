@@ -1,45 +1,41 @@
-package com.mtit.MembershipRegisterPublisher;
+package com.mtit.WorkoutPublisher;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.mtit.MembershipRegisterPublisher.Membership;
-import com.mtit.MembershipRegisterPublisher.MembershipPublisher;
+import com.mtit.WorkoutPublisher.WorkoutPublisher;
 
-public class MembershipPublishImpl implements MembershipPublisher {
+public class WorkoutPublishImpl implements WorkoutPublisher {
 	
-	public List<Membership> memberships = new ArrayList<Membership>();
+	public List<Workout> workouts = new ArrayList<Workout>();
 
 	//adding a new record 
-	@Override
-	public String addMember(String member_ID, String fname, String lname, String contact_no, String mem_type, String valid_years) {
-          Membership membership = new Membership (member_ID, fname,lname,contact_no,mem_type,valid_years);
-          memberships.add(membership);
-          return "New Member: " + membership.getFname() + " " + membership.getLname() + " " + "registered successfully!";
+	public String addWorkout(String workout_ID, String workout_name, String workout_weight, String workout_reps, String workout_type, String workout_duration) {
+          Workout workout = new Workout (workout_ID, workout_name,workout_weight,workout_reps,workout_type,workout_duration);
+          workouts.add(workout);
+          return "New: " + workout.getworkout_name() + " " + "registered successfully!";
      
 	}
 
 	//Get all records 
 	@Override
-	public List <Membership> getAllMembers() {
-		return memberships;
+	public List <Workout> getAllWorkouts() {
+		return workouts;
 			
 	}
 
 	//Delete Record
 	@Override
-	public void deleteMember(String member_ID) {
-	    for(Membership membership : memberships) {
-	    	if(membership.getmember_ID().equalsIgnoreCase(member_ID)) {
-	    		int id =memberships.indexOf(membership);
-	    		memberships.remove(id);
-	    		System.out.println("Delete Member Record" + id + "Successfully");
+	public void deleteWorkout(String workout_ID) {
+	    for(Workout workout : workouts) {
+	    	if(workout.getworkout_ID().equalsIgnoreCase(workout_ID)) {
+	    		int id =workouts.indexOf(workout);
+	    		workouts.remove(id);
+	    		System.out.println("Workout Schedule Deleted Successfully");
 	    		return ;
 	    	}
 	    }
 		
 	}
-	
-	
 	
 }

@@ -1,64 +1,64 @@
-package com.mtit.MembershipRegisterPublisher;
+package com.mtit.WorkoutPublisher;
 
-public class Membership {
+public class Workout {
 
-	private String member_ID;
-	private String fname;
-	private String lname;
-	private String contact_no;
-	private String mem_type;
-	private String valid_years;
+	private String workout_ID;
+	private String workout_name;
+	private String workout_weight;
+	private String workout_reps;
+	private String workout_type;
+	private String workout_duration;
 	
-	public Membership(String member_ID, String fname, String lname, String contact_no, String mem_type, String valid_years) {
+	public Workout(String workout_ID, String workout_name, String workout_weight, String workout_reps, String workout_type, String workout_duration) {
 		super();
-		this.member_ID = member_ID;
-		this.fname = fname;
-		this.lname = lname;
-		this.contact_no = contact_no;
-		this.mem_type = mem_type;
-		this.valid_years = valid_years;
+		this.workout_ID = workout_ID;
+		this.workout_name = workout_name;
+		this.workout_weight = workout_weight;
+		this.workout_reps = workout_reps;
+		this.workout_type = workout_type;
+		this.workout_duration = workout_duration;
 	}
 	
 	//Getters 
 	
-	public String getmember_ID() {
-		return member_ID;
+	public String getworkout_ID() {
+		return workout_ID;
 	}
-	public String getFname() {
-		return fname;
+	public String getworkout_name() {
+		return workout_name;
 	}
-	public String getLname() {
-		return lname;
+	public String getworkout_weight() {
+		return workout_weight;
 	}
-	public String getContact_no() {
-		return contact_no;
+	public String getworkout_reps() {
+		return workout_reps;
 	}
-	public String getmem_type() {
-		return mem_type;
+	public String getworkout_type() {
+		return workout_type;
 	}
-	public String getvalid_years() {
-		return valid_years;
+	public String getworkout_duration() {
+		return workout_duration;
 	}
 	
 	//Setters
 	
-	public void setmember_ID(String member_ID) {
-		this.member_ID = member_ID;
+	public void setworkout_ID(String workout_ID) {
+		this.workout_ID = workout_ID;
 	}
-	public void setFname(String fname) {
-		this.fname = fname;
+	public void setworkout_name(String workout_name) {
+		this.workout_name = workout_name;
 	}
-	public void setLname(String lname) {
-		this.lname = lname;
+	public void setworkout_weight(String workout_weight) {
+		this.workout_weight = workout_weight;
 	}
-	public void setContact_no(String contact_no) {
-		this.contact_no = contact_no;
+	public void setworkout_reps(String workout_reps) {
+		this.workout_reps = workout_reps;
 	}
-	public void setmem_type(String mem_type) {
-		this.mem_type = mem_type;
+	public void setworkout_type(String workout_type) {
+		this.workout_type = workout_type;
 	}
-	public void setvalid_years(String valid_years) {
-		this.valid_years = valid_years;
+	public void setworkout_duration(String workout_duration) {
+		this.workout_duration = workout_duration;
 	}
 	
 	

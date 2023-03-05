@@ -1,9 +1,13 @@
-package com.mtit.MembershipRegisterPublisher;
+package com.mtit.WorkoutPublisher;
 import java.util.List;
 
-public interface MembershipPublisher {
+public interface WorkoutPublisher {
 	
-	public String addMember(String member_ID, String fname, String lname, String contact_no, String mem_type, String valid_years);
-	public List <Membership> getAllMembers();
-	public void deleteMember(String member_ID);
+	public String addWorkout(String workout_ID, String workout_name, String workout_weight, String workout_reps, String workout_type, String workout_duration);
+	
+	public List <Workout> getAllWorkouts();
+	
+	public void deleteWorkout(String workout_ID);
+
+
 }
