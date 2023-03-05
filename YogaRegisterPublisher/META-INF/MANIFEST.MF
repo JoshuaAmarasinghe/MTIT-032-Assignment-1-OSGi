@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: YogaPublisher
+Bundle-SymbolicName: YogaPublisher
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.mtit.YogaPublisher.YogaActivator
+Export-Package: com.mtit.YogaPublisher
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: YogaPublisher
+Import-Package: com.mtit.YogaPublisher,
+ org.osgi.framework;version="1.3.0"
+Bundle-ActivationPolicy: lazy
