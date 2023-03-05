@@ -23,7 +23,7 @@ public class MembershipActivator implements BundleActivator {
 	}
 
 	public void stop(BundleContext context) throws Exception {
-		System.out.println("Stoped Membership Subscriber");
+		System.out.println("Stopped Membership Subscriber");
 	
 	}
 
