@@ -24,7 +24,7 @@ public class MembershipSubscriberImpl implements MembershipSubscriber {
 	@Override
 	public void getService(MembershipPublisher membershippublisher) {
 		System.out.println();
-		System.out.println("=========== Membership Registration ============");
+		System.out.println("============== Membership Service ==============");
 		System.out.println("                Gym Fitness 032                 ");
 		System.out.println();
 		System.out.println("Select the desired service from the below menu. ");
@@ -47,7 +47,7 @@ public class MembershipSubscriberImpl implements MembershipSubscriber {
 	}
 
 	public String getInput() {
-		System.out.println("=========== Membership Registration ============");
+		System.out.println("                                                ");
 		System.out.println("Add Members:                               'Add'");
 		System.out.println("View Member Details:                       'All'");
 		System.out.println("Remove Members:                         'Delete'");
@@ -59,23 +59,35 @@ public class MembershipSubscriberImpl implements MembershipSubscriber {
 	}
 
 	public void addRecord(MembershipPublisher membershippublisher) {
-		System.out.println("Enter Member ID:");
+		System.out.println();
+		System.out.println("=========== Membership Registration ============");
+		System.out.println("                Gym Fitness 032                 ");
+		System.out.println();
+		System.out.println("Insert new Member Details");
+		System.out.println();
+		System.out.println("Member ID:");
 		member_ID = sc.nextLine();
+		System.out.println();
 
-		System.out.println("Enter Member's First Name:");
+		System.out.println("First Name:");
 		fname = sc.nextLine();
+		System.out.println();
 
-		System.out.println("Enter Member's Last Name");
+		System.out.println("Last Name");
 		lname = sc.nextLine();
+		System.out.println();
 
-		System.out.println("Enter Contact Number:");
+		System.out.println("Contact Number:");
 		contact_no = sc.nextLine();
+		System.out.println();
 
-		System.out.println("Enter Membership Type:");
+		System.out.println("Membership Package:");
 		mem_type = sc.nextLine();
+		System.out.println();
 
-		System.out.println("Enter Membership Valid for (Year): ");
+		System.out.println("Membership Valid for (Year/s): ");
 		valid_years = sc.nextLine();
+		System.out.println();
 
 		String temp = membershippublisher.addMember(member_ID, fname, lname, contact_no, mem_type, valid_years);
 		System.out.println(temp);
@@ -86,12 +98,15 @@ public class MembershipSubscriberImpl implements MembershipSubscriber {
 		List<Membership> memberships = membershippublisher.getAllMembers();
 
 		System.out.println();
-		System.out.println("Displaying all Registered Gym Members ");
+		System.out.println("=================== Members ====================");
+		System.out.println("                Gym Fitness 032                 ");
 		System.out.println();
-		System.out.println("ID \t Full Name");
+		System.out.println();
+		System.out.println("ID \t\t Full Name");
 		for (Membership membership : memberships) {
 			System.out.println();
-			System.out.println(membership.getmember_ID() + "\t" + membership.getFname() + " " + membership.getLname());
+			System.out
+					.println(membership.getmember_ID() + "\t\t" + membership.getFname() + " " + membership.getLname());
 			System.out.println();
 		}
 
@@ -101,6 +116,10 @@ public class MembershipSubscriberImpl implements MembershipSubscriber {
 	private void deleteRecord(MembershipPublisher membershippublisher) {
 		String member_id;
 
+		System.out.println();
+		System.out.println("============== Members Deletion ================");
+		System.out.println("                Gym Fitness 032                 ");
+		System.out.println();
 		System.out.println("Enter Member's ID to be deleted: ");
 		member_id = sc.nextLine();
 		membershippublisher.deleteMember(member_id);
