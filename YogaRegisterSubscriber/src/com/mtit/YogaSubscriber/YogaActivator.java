@@ -23,7 +23,7 @@ public class YogaActivator implements BundleActivator {
 	}
 
 	public void stop(BundleContext context) throws Exception {
-		System.out.println("Stoped Yoga Subscriber");
+		System.out.println("Stopped Yoga Subscriber");
 	
 	}
 
