@@ -8,7 +8,6 @@ import org.osgi.framework.ServiceReference;
 
 import com.mtit.YogaPublisher.YogaPublisher;
 
-
 public class YogaActivator implements BundleActivator {
 
       ServiceReference serviceReference;
